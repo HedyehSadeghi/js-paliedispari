@@ -8,7 +8,7 @@ console.log(response);
 let userKeepsPlaying="k";
 
 while( userKeepsPlaying=="k"){
-    var userChoiceOddEven= prompt("scegli tra pari o dispari. se scegli PARI scrivi y se scegli dispari scrivi x");
+    let userChoiceOddEven= prompt("scegli tra pari o dispari. se scegli PARI scrivi y se scegli dispari scrivi x");
     let userChoiceNumber= parseInt(prompt("scegli un numero da 1 a 5 compresi"));
 
     if ((userChoiceNumber<1)|| (userChoiceNumber>5)|| (isNaN(userChoiceNumber))){
@@ -18,7 +18,7 @@ while( userKeepsPlaying=="k"){
         let computerNumber= randomNumberMinMaxIncluded(1,5);
         console.log(computerNumber);
 
-        sumNumbersOddEven(userChoiceNumber,computerNumber);
+        sumNumbersOddEven(userChoiceNumber,computerNumber, userChoiceOddEven);
     }
 
 
@@ -74,7 +74,7 @@ function randomNumberMinMaxIncluded(min, max){
 }
 
 
-function sumNumbersOddEven (num1, num2){
+function sumNumbersOddEven (num1, num2, userChoiceOddEven){
     let sum=num1+num2;
 
     if (sum % 2==0){
