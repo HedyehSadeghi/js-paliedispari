@@ -10,22 +10,17 @@ console.log(response);
 
 function palindromeWord(word){
    
+    let palindrome=true;
     let arrayWord= word.split("");
     console.log(arrayWord);
 
-    let palindrome=false;
-
-    for (let i=0; i<arrayWord.length; i++){
-        if (arrayWord[i]==arrayWord[((arrayWord.length-1)-i)]){
-            palindrome=true;
-        } 
-        else{
+    for (let i=0; i<arrayWord.length/2; i++){
+        if (arrayWord[i]!=arrayWord[(arrayWord.length-1)-i]){
             palindrome=false;
-        }
-        return palindrome;
+            break;
+        } 
     }
-
-
+    return palindrome;
 }
 
 
