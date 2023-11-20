@@ -23,12 +23,34 @@ function palindromeWord(word){
     return palindrome;
 }
 
+//OPPURE
+/*
+function palindromeWord(word){
+
+    let arrayWord= word.split("");
+    console.log(arrayWord);
+
+    let palindrome=false;
+
+    for (let i=0; i<arrayWord.length; i++){
+        if (arrayWord[i]==arrayWord[((arrayWord.length-1)-i)]){
+            palindrome=true;
+        } 
+        else{
+            palindrome=false;
+        }
+    }
+    return palindrome;
+
+
+}
+*/
 
 
 let userChoiceOddEven= prompt("scegli tra pari o dispari. se scegli PARI scrivi y se scegli dispari scrivi x");
 let userChoiceNumber= parseInt(prompt("scegli un numero da 1 a 5 compresi"));
 
-if ((userChoiceNumber<1)|| (userChoiceNumber>5)){
+if ((userChoiceNumber<1)|| (userChoiceNumber>5)|| (isNaN(userChoiceNumber))){
     alert("non hai inserito un numero corretto");
 }
 else{
