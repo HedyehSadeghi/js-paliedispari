@@ -1,3 +1,4 @@
+/*
 let userWorld = prompt("inserisci una parola e ti dirò se è polindroma");
 
 let response=palindromeWord(userWorld);
@@ -25,6 +26,32 @@ while( userKeepsPlaying=="k"){
     userKeepsPlaying=prompt("Se vuoi continuare a giocare premi k, se vuoi smettere scrivi qualsiasi altro carattere");
     
 }
+
+
+*/
+
+//---------SNACKS--------------
+
+
+let userChoiceNumber= parseInt(prompt("scegli un numero intero"));
+console.log(cubeOfANumber(userChoiceNumber));
+
+
+let arraySnack12=[];
+for (let i=0; i<10; i++){
+    arraySnack12[i]=parseInt(prompt("scegli un numero intero: "))
+}
+console.log(arraySnack12);
+console.log(sommaNumeri(arraySnack12));
+
+console.log(mediaAritmetica(arraySnack12));
+
+
+let userNumber4Figures=prompt("Scegli un numero a 4 cifre");
+console.log(userNumber4Figures);
+
+prompt("la somma è: "+ sumOfFiguresInNumber(userNumber4Figures));
+
 
 
 //-----------------FUNZIONI--------------------
@@ -93,4 +120,41 @@ function sumNumbersOddEven (num1, num2, userChoiceOddEven){
             console.log("ha vinto il pc")
         }
     }
+}
+
+
+//--------BONUS SNACKS-----------
+
+function cubeOfANumber(number){
+    let array=[];
+    
+    for (let i=0; i<=number+1; i++){
+        array[i]=i*i*i;
+    }
+    return array;
+}
+
+function sommaNumeri(array){
+    let somma=0;
+    for (let i =0; i<array.length; i++){
+        somma += array[i];
+    }
+    return somma;
+}
+
+function mediaAritmetica(array){
+    let somma= sommaNumeri(array);
+    let divisore= array.length;
+    let result= somma/divisore;
+    return result;
+}
+
+function sumOfFiguresInNumber(stringNumber){
+    let array= stringNumber.split("");
+    let sum=0;
+    for (i=0; i<array.length; i++){
+        sum +=parseInt(array[i]);
+    }
+
+    return sum;
 }
